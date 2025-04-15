@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		final String ID_FOR_VALIDATION = "admin"; // 테스트용 예제니까 아무래도 좋아
-		final String PW_FOR_VALIDATION = "1q2w3e"; // 국룰
+		final String PW_FOR_VALIDATION = "1q2w3e"; // 아무 패스워드
 
 		// 이번 request에서 날아온 값을 받아옴
 		String userId = request.getParameter("userId").toString();
@@ -32,9 +32,9 @@ public class LoginServlet extends HttpServlet {
 		String formattedTime = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
 				.format(new java.util.Date(lastAccessTime));
 
-		System.out.println("👉 userId = " + userId);
-		System.out.println("👉 userPw = " + userPw);
-		System.out.println("👉 userName = " + userName);
+		// System.out.println("👉 userId = " + userId);
+		// System.out.println("👉 userPw = " + userPw);
+		// System.out.println("👉 userName = " + userName);
 
 		// 넘어온 데이터를 받아서 변수에 저장 후 비교
 		// 패스워드가 지정된 계정과 맞으면 LoginOk 페이지로 이동

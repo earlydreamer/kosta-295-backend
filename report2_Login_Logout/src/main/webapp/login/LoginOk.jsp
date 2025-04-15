@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Profile Page</title>
 </head>
 <body>
 <h1> 프로필 페이지 </h1>
@@ -31,7 +31,18 @@
 
 
 <form method = "post" action = "<%= request.getContextPath() %>/LogoutServlet">
-<button id = "button" type = "submit">로그아웃 버튼</button>
+<button id = "button" type = "button">로그아웃 버튼</button>
+<script>
+
+const button = document.getElementById("button");
+button.addEventListener("click",function(){
+	if(confirm("로그아웃하시겠습니까?")){
+		button.form.submit();	
+	} // else 아무것도 안함
+});
+
+</script>
+
 </form>
 </body>
 </html>
