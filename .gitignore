@@ -102,3 +102,6 @@ Servers/
 # Ensure WebContent folder is tracked (JSP, CSS, JS, etc.)
 !WebContent/
 !WebContent/**
+
+# Local Tomcat Folder
+/tomcat/
