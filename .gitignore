@@ -2,6 +2,11 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=java,eclipse
 # modify for Java Jsp & Servlet by Jake.Park (2025-04-14)
 
+
+##Eclipse-egit auto generated .gitignore
+**/.gitignore
+
+
 ### Eclipse ###
 .metadata
 bin/
@@ -14,6 +19,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
+
 
 # External tool builders
 .externalToolBuilders/
