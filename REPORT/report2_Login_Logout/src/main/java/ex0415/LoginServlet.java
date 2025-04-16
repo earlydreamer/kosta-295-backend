@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -40,10 +41,17 @@ public class LoginServlet extends HttpServlet {
 		// 패스워드가 지정된 계정과 맞으면 LoginOk 페이지로 이동
 		// (redirect 방식으로 이동, 이동할때 form에서 전달받은 변수 값 전달함)
 
+		//쿠키에 정보 추가
+		Cookie cookie = new Cookie("savedId",userId);
+		cookie.setMaxAge(60*60*24);
+		cookie.setPath("/");
+		response.addCookie(cookie);
+
 		if (userId.equals(ID_FOR_VALIDATION) && userPw.equals(PW_FOR_VALIDATION)) {
 			request.getSession().setAttribute("userId", userId);
 			request.getSession().setAttribute("userName", userName);
 			request.getSession().setAttribute("loginTime", formattedTime); // 날짜시간형식으로 포맷팅된 시간을 쏴줌
+			
 			response.sendRedirect(getServletContext().getContextPath() + "/login/LoginOk.jsp");
 
 		} else {

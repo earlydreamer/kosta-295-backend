@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +16,11 @@
 <% 
 	response.setHeader("Cache-Control","no-store");// 캐시 컨트롤 (열릴 때마다 다시 실행된다)
 	session.setMaxInactiveInterval(60);// 세션 유지시간을 1분으로 변경
-	
 	//받아서 변수에 담기
 	String userId=null;
 	String userName=null;	
 	String loginTime=null;
+
 	if(session.getAttribute("userId")!=null){
 		userId = session.getAttribute("userId").toString();
 		userName = session.getAttribute("userName").toString();
@@ -29,8 +32,8 @@
 	}
 %>
 
-<h3>${userName}님 반갑습니다!</h3>
-<h3>최종 로그인 시각 : ${loginTime}</h3>
+<h3><%=userName%>님 반갑습니다!</h3>
+<h3>최종 로그인 시각 : <%=loginTime%></h3>
 
 
 <form method = "post" action = "<%= request.getContextPath() %>/LogoutServlet">

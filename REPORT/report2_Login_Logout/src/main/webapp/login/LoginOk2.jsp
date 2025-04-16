@@ -29,8 +29,8 @@
 	}
 %>
 
-<h3>${userName}님 반갑습니다!</h3>
-<h3>최종 로그인 시각 : ${loginTime}</h3>
+<h3><%=userName%>님 반갑습니다!</h3>
+<h3>최종 로그인 시각 : <%=loginTime%></h3>
 
 
 <form method = "post" action = "<%= request.getContextPath() %>/LogoutServlet">
