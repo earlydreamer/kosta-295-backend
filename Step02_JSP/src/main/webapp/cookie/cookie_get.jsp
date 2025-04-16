@@ -7,15 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-
-메시지:<%=application.getAttribute("message") %><br>
-메뉴:<%=application.getAttribute("menus") %><br>
-
-아이디:<%=session.getAttribute("id") %><br>
-주소:<%=request.getAttribute("id") %><br>
-
-<h1>Cookie get</h1>
+<h1>Cookie get : Cookie page</h1>
 <%
 	Cookie cookies [] = request.getCookies();
 	//리퀘스트를 읽기 전에는 null일 수 있음
