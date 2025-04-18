@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>Step04_Filter</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+	</welcome-file-list>
+	<!-- 모든 서블릿, 모든 jsp에서 공통으로 사용할 정보를 설정함 -->
+	<!-- Filter 등록 -->
+
+	<filter>
+		<filter-name>SampleFilter</filter-name>
+		<filter-class>ex0417.filter.SampleFilter</filter-class>
+	</filter>
+
+
+	<filter-mapping>
+		<filter-name>SampleFilter</filter-name>
+		<url-pattern>/test01.jsp</url-pattern>
+		<url-pattern>/test02.jsp</url-pattern>
+		<url-pattern>/test</url-pattern>
+		<url-pattern>/*</url-pattern><!-- 이 필터를 항상 방문한다는 표시. 요청을 받을 때마다 실행한다. == 
+			잘못된 요청에도 반응한다(404 등) -->
+	</filter-mapping>
+	<servlet>
+		<servlet-name>test</servlet-name>
+		<servlet-class>ex0417.servlet.TestServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>test</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+</web-app>
+
+	
