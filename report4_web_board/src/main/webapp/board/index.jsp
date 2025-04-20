@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시판 과제</title>
 <style type="text/css">
   table {width: 800px; height: 600px; border:1px solid gray; border-collapse: collapse; }
   td{border: 1px gray solid; text-align: center;}

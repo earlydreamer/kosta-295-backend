@@ -23,7 +23,7 @@ public class BoardListener implements ServletContextListener {
         boardList.add(new BoardDTO(3, "셋째 글", "내용 3"));
         sce.getServletContext().setAttribute("boardList", boardList);
         
-        System.out.println("초기값세팅");
+//        System.out.println("초기값세팅");
     	
 
     }

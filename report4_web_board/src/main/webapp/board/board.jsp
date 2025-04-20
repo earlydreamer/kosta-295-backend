@@ -45,7 +45,7 @@
 		</c:forEach>
 	</table>
 	<div id="board_input" hidden>
-		<form method = "post" action = "${pageContext.request.contextPath}/Board" target = "board">
+		<form method = "post" action = "${pageContext.request.contextPath}/Board" target = "center">
 			<label id="number_input_label">번호</label>
 				<input id="number_input" name="number_input" required><br>
 			<label id="subject_input_label">제목</label>

@@ -30,7 +30,7 @@
 				name="user_id" required><br> <label id="pw_input_label">PWD
 				: </label><input id="user_pw" name="user_pw" required><br>
 			<button id="login_submit">로그인</button>
-			<button id="cancel_button">취소</button>
+			<!--  >button id="cancel_button">취소</button-->
 			<!--  로그인은 알겠는데 취소버튼은 왜있는거지 -->
 		</form>
 	</div>

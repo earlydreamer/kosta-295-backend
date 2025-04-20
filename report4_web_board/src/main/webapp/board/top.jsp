@@ -19,9 +19,9 @@
 
 		<div class='toparea-menu'>
 			<ul>
-				<li><a href= "">게시판</a></li>
-				<li><a href="">mypage</a></li>
-				<li><a href="">q&a</a></li>
+				<li><a href= "${pageContext.request.contextPath}/board/board.jsp" target="center">게시판</a></li>
+				<li><a href="${pageContext.request.contextPath}/board/mypage.jsp" target="center">mypage</a></li>
+				<li><a href="${pageContext.request.contextPath}/board/qna.jsp"target="center">q&a</a></li>
 			</ul>
 		</div>
 		

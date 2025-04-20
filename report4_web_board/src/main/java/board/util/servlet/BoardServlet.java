@@ -40,7 +40,6 @@ public class BoardServlet extends HttpServlet {
 			boardList.add(new BoardDTO(no, subject, content));
 		}
 
-		System.out.println("submit");
 		response.setContentType("text/html;charset=UTF-8");
 		response.getWriter().println("<script>top.location.href='" + request.getContextPath() + "/board/index.jsp';</script>");
 	}
