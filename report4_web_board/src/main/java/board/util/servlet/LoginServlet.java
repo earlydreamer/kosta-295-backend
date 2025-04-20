@@ -68,9 +68,15 @@ public class LoginServlet extends HttpServlet {
 		//이렇게 하면 get 방식으로 요청이 간다. doGet을 오버라이딩하지 않고 해결보려면 forward 방식으로 구현해야 한다.
 		//forward로 구현할 경우 주소창이 안 바뀌지만 iframe 내에서 하는 동작이니까 주소창은 신경쓰지 않아도 된다...
 		System.out.println("forward");
-		request.getRequestDispatcher("/board/left.jsp").forward(request, response);
-		
+		//request.getRequestDispatcher("/board/left.jsp").forward(request, response);
 		//forward 방식일 때는 컨텍스트 패스를 안 붙인다. 브라우저가 보는 영역이 아니라 서버내부동작이기 떄문임	
+		//그런데 left.jsp만 갱신하면 center영역(board.jsp) 갱신이 안됨... left만 갱신하면 center가 안바뀌고 getRequestDispatcher 경로를 index.jsp로 하면 터짐 
+		
+		response.setContentType("text/html;charset=UTF-8");
+		response.getWriter().println("<script>top.location.href='board/index.jsp';</script>");
+
+		
+		
 	}
 
 	boolean testValidation(String userId, String userPw) {

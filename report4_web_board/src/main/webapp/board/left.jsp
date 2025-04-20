@@ -68,8 +68,8 @@
 		document.getElementById("user_info").hidden = true;
 
 		//DOM에 의미없는 텍스트가 노출되지 않도록 텍스트 레이블의 내용을 빈 값으로 날려버린다
-		document.getElementById("welcome_text").innerText = "";
-		document.getElementById("date").innerText = "";
+		//document.getElementById("welcome_text").innerText = "";
+		//document.getElementById("date").innerText = "";
 		
 	}
 	
