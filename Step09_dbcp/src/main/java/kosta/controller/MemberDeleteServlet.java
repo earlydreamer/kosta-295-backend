@@ -14,7 +14,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class MemberDeleteServlet
  */
-@WebServlet("/delete")
+@WebServlet(urlPatterns="/delete",loadOnStartup = 1)
 public class MemberDeleteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

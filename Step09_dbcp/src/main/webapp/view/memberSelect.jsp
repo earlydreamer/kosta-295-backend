@@ -60,7 +60,7 @@
 				<td>${dto.addr}</td>
 				<td>${dto.phone}</td>
 				<td>${dto.joinDate}</td>	
-				<td><form action = "${pageContext.request.contextPath}/delete"><button type = "submit" name = "id" value = "${dto.id}" > 삭제 </button></form></td>
+				<td><form action = "${pageContext.request.contextPath}/delete"><button type = "submit" name = "id" value = "${dto.id}" data-val-id="button_${dto.id}"> 삭제 </button></form></td>
 			</tr>
 		</c:forEach>    
 </table>
@@ -75,11 +75,23 @@
  </select>
  
 <input type="text" name="keyWord"/>
-<input type="submit" value="검색" />  
+<input type="button" value="검색" />  
 
 </form>
 
 </div>
+
+<script type="text/javascript">
+	documjent.querySelectorAll("[value='삭제']").forEach(function(btn,index){
+		btn.addEventListener("click",function(){
+			const idV=this.getAttrivute("data-del-id");
+			//delete 서블릿 호출
+			
+		})
+	})
+
+
+</script>
 
 </body>
 </html>
