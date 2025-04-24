@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="https://jakarta.ee/xml/ns/jakartaee"
+	xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+	id="WebApp_ID" version="6.0">
+	<display-name>Step06_Listener</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+
+	<!-- 세션 검증을 위한 필터 추가 -->
+	<!-- 
+	<filter>
+		<filter-name>AuthenticationCheckFilter</filter-name>
+		<filter-class>filter.AuthenticationCheckFilter</filter-class>
+	</filter>
+ 	-->	
+
+	<!-- 서블릿 등록은 @annotation 기반으로 진행되므로 여기서는 등록하지 않는다 -->
+
+</web-app>
+
+	
