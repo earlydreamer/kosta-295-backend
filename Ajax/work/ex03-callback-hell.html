@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> callback hell </h1>
+
+
+    <script>
+        console.log("1. 시작");
+        setTimeout((() => {
+            console.log("하나");
+        }), 2000);
+
+        setTimeout((() => {
+            console.log("둘");
+        }), 2000);
+
+        //콜백 헬 예시
+        setTimeout((() => {
+            console.log("셋");
+            setTimeout((() => {
+                console.log("넷");
+            }), 2000);
+            setTimeout((() => {
+                console.log("다섯");
+            }), 2000);
+        }), 2000);
+    
+
+        //setTimeOut 예시를 promise로 바꾼 예시
+        
+
+
+        console.log("끝");
+
+
+
+
+
+    </script>
+</body>
+
+</html>

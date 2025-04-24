@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="lpr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>promise</h1>
+    <SCRIPT>
+        const promise = new Promise((resolve, reject) => {
+            console.log("promise start"); //promise 시작
+            setTimeout(() => { //2초 후에 실행
+                //resolve("성공"); //성공시 resolve 호출
+                reject("실패");
+            }, 2000);
+        });
+
+
+        console.log("1 ", promise);
+
+
+        setTimeout(() => { //2초 후에 실행
+            console.log("2 ", promise); //promise 종료
+        }, 2000);
+
+        promise.then((result) => {
+            console.log("then ", result); //promise 성공시 then 호출
+        }).catch((err) => {
+            console.log("catch ", err); //promise 실패시 catch 호출
+        }); //promise 성공시 then 호출, 실패시 catch 호출
+
+    </SCRIPT>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //콜백을 사용하지 않은 예시
+        function add(a,b){
+            return a + b;
+        } 
+        function sub(a,b){
+            return a - b;
+        }
+        function printadd(a,b){
+            let result = add(a,b);
+            console.log(result);
+        }
+        function printsub(a,b){
+            let result = sub(a,b);
+            console.log(result);
+        }
+
+        printadd(5,3);
+        printsub(5,3);
+
+    </script>
+</body>
+</html>
