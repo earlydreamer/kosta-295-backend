@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+
+
+</head>
+
+<body>
+	<h1>비동기통신 : javaScript가 제공하는 fetch함수 알아보기</h1>
+	<form id="f" method="post">
+		이름 : <input type="text" id="name" name="name"><br> 아이디 :
+		<input type="text" id="id" name="id"><br>
+
+		<button id="btn" type="button">클릭</button>
+	</form>
+
+	<hr>
+	<div id="result"></div>
+</body>
+<script>
+	document.getElementById("btn").addEventListener("click", async function () {
+		const formdata = new FormData(document.getElementById("f")); //form 안의 값들을 가져옴
+		const body = new URLSearchParams(formdata); //변수에 body 값을 담음
+		try {
+		const response = await fetch("ajaxCheck", {
+				method: "POST",
+				//body:new URLSearchParams({id:"test",name:"test"}) // urlSearchParams에 간단한 객체를 직접 실어서 전송
+				//body:new URLSearchParams(formdata) // formdata에 담긴 값을 전송
+				//body:body //앞의 body 스코프 생략 가능
+				body
+
+			});
+			const text = await response.text(); // Changed variable name from response to text
+			if (!response.ok) {
+				throw new Error("error 발생" + response.status);
+			}
+			const result = text; // Use the 'text' variable instead of 'response.text()'
+			document.getElementById("result").innerHTML = "<h4>" + result + "</h4>";
+		} catch (e) {
+			console.log(e);
+		}
+	})
+
+
+</script>
+
+
+
+
+
+
+</html>

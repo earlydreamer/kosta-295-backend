@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> 비동기 통신</h1>
+    <script>
+        // let response = fetch("https://jsonplaceholder.typicode.com/users/1");
+        let response = fetch("https://jsonplaceholder.typicode.com/users/")
+            .then(response => response.json())
+            // .then (result=>console.log("result=",result));
+            .then(result => {
+                result.forEach(element => {
+                    console.log("element=", element);
+                    console.log("id = ", element.id);
+                    console.log("name = ", element.name);
+                    console.log("email = ", element.email);
+                    console.log("address = ", element.address);
+                    console.log("phone = ", element.phone); 
+                })
+            })
+
+        console.log("respo0nse=", response); //Promise {<pending>} 상태로 리턴됨. 아직 통신이 완료되지 않음
+    </script>
+
+</body>
+
+</html>
